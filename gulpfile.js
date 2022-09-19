@@ -60,4 +60,9 @@ gulp.task('images', function() {
         .pipe(gulp.dest("dist/img"));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'icons', 'images'));
+gulp.task('mailer', function () {
+    return gulp.src("src/mailer/**/*")
+        .pipe(gulp.dest("dist/mailer"));
+});
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'icons', 'images', 'mailer'));
